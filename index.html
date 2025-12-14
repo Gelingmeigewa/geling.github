@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Refresh" content="0; url=01-index.html">
-    <title>跳转中...</title>
+    <title>正在前往主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .jump-container {
+            background: white;
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .jump-title {
+            font-size: 24px;
+            color: #2d3748;
+            margin-bottom: 16px;
+        }
+        .jump-desc {
+            font-size: 16px;
+            color: #718096;
+            margin-bottom: 24px;
+        }
+        .jump-link {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #4299e1;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+        .jump-link:hover {
+            background-color: #3182ce;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    页面正在跳转，若未自动跳转请<a href="01-index.html">点击这里</a>
+    <div class="jump-container">
+        <h1 class="jump-title">正在前往站点主页</h1>
+        <p class="jump-desc">若未自动跳转，请点击下方链接</p>
+        <a href="01-index.html" class="jump-link">立即前往主页</a>
+    </div>
 </body>
 </html>
