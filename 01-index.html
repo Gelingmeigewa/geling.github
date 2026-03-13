@@ -5,301 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>常用网址收藏夹</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: "微软雅黑", "PingFang SC", sans-serif; 
-            background: #f5f7fa; 
-            line-height: 1.6; 
-            min-height: 100vh; /* 确保页脚在底部 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: #f5f7fa;
+            line-height: 1.6;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            flex: 1; /* 占满剩余空间 */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
         }
-        h1 { 
-            color: #2c3e50; 
-            text-align: center; 
-            margin: 20px 0; 
-            font-size: clamp(24px, 4vw, 28px); /* 响应式字体 */
-            letter-spacing: 1px;
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin: 30px 0;
+            font-size: clamp(24px, 4vw, 32px);
         }
-        /* 搜索框优化 */
-        .search-box { 
-            text-align: center; 
-            margin: 30px 0; 
-            position: relative;
+
+        .search-box {
+            text-align: center;
+            margin: 0 0 40px;
         }
-        #search-input { 
-            width: 80%; 
-            max-width: 500px; 
-            padding: 12px 20px; 
-            border: 2px solid #3498db; 
-            border-radius: 30px; 
-            font-size: 16px; 
-            outline: none; 
-            transition: all 0.3s ease; 
+
+        #search-input {
+            width: 90%;
+            max-width: 500px;
+            padding: 12px 20px;
+            border: 2px solid #3498db;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
         }
-        #search-input:focus { 
-            border-color: #2980b9; 
-            box-shadow: 0 0 10px rgba(52, 152, 219, 0.2); 
+
+        #search-input:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 12px rgba(52, 152, 219, 0.2);
         }
-        #search-input::placeholder { 
-            color: #bdc3c7; 
-            font-size: 15px; 
+
+        .category {
+            margin-bottom: 40px;
         }
-        /* 分类卡片优化 */
-        .category { 
-            margin: 40px 0; 
-            padding: 0 10px;
-        }
-        .category-title { 
-            color: #3498db; 
-            border-left: 4px solid #3498db; 
-            padding-left: 15px; 
-            margin-bottom: 20px; 
-            font-size: clamp(20px, 3vw, 22px); 
+
+        .category-title {
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-size: clamp(20px, 3vw, 24px);
             font-weight: 600;
         }
-        .links-list { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 15px; 
+
+        .links-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
         }
-        .link-card { 
-            background: white; 
-            padding: 20px; 
-            border-radius: 10px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-            flex: 1; 
-            min-width: 250px; 
-            transition: all 0.3s ease; /* 完整过渡效果 */
+
+        .link-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            flex: 1;
+            min-width: 280px;
+            transition: 0.3s;
         }
-        .link-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
         }
-        .link-item { 
-            margin-bottom: 15px; 
-            padding-bottom: 15px; 
-            border-bottom: 1px solid #f1f1f1; /* 分隔线 */
+
+        .link-item {
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #f1f1f1;
         }
-        .link-item:last-child { 
-            margin-bottom: 0; 
-            padding-bottom: 0; 
-            border-bottom: none; 
+
+        .link-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
-        .link-card a { 
-            text-decoration: none; 
-            color: #2c3e50; 
-            font-weight: 500; 
-            font-size: 16px; 
-            transition: color 0.2s ease;
+
+        .link-item a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
         }
-        .link-card a:hover { 
-            color: #3498db; 
-            text-decoration: underline; 
-            text-underline-offset: 4px; /* 下划线偏移，更美观 */
+
+        .link-item a:hover {
+            color: #3498db;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
-        .link-desc { 
-            color: #7f8c8d; 
-            font-size: 14px; 
-            margin-top: 5px; 
-            line-height: 1.5; 
+
+        .link-desc {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 4px;
         }
-        /* 页脚优化 */
+
         footer {
             text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+            padding: 16px 0;
+            background: #fff;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.04);
             margin-top: auto;
+            font-size: 14px;
+            color: #666;
         }
+
         footer a {
-            display: block;
-            color: #2196f3;
-            font-size: clamp(10px, 1.5vw, 12px);
+            color: #3498db;
             text-decoration: none;
-            margin: 2px auto;
-            line-height: 1.4;
-            max-width: 90%;
-            transition: color 0.2s ease;
         }
+
         footer a:hover {
-            color: #1976d2;
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>🔗 常用网址收藏夹</h1>
-        
-        <!-- 搜索功能 -->
+
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="搜索网址（名称/描述）...">
+            <input type="text" id="search-input" placeholder="搜索网址名称或描述...">
         </div>
 
-        <!-- 个人用分类 -->
+        <!-- 个人用 -->
         <div class="category">
-            <h2 class="category-title">👤 个人用</h2>
+            <h2 class="category-title">👤 个人常用</h2>
             <div class="links-list">
                 <div class="link-card">
                     <div class="link-item">
-                        <a href="https://vivo.com.cn" target="_blank">vivo官网</a>
-                        <p class="link-desc">可以登录后做：网页办公、网盘、查找设备</p>
-                         </div>
-                    <div class="link-item">
-                        <a href="https://github.com" target="_blank">GitHub官网</a>
-                        <p class="link-desc">网站部署、代码托管、开发工具</p>
-                 </div>
-                    <div class="link-item">
-                        <a href="https://dash.cloudflare.com/ed335c294acebfe062a6c805aa800ad6/workers-and-pages" target="_blank">Cloudflare的Workers和Pages服务管理面板</a>
-                        <p class="link-desc">管理Pages和关联GitHub仓库的网页代码托管服务平台</p>
-                 </div>
-                    <div class="link-item">
-                        <a href="https://admin.localhost.run/">localhost.run官网</a>
-                        <p class="link-desc">内网穿透工具,简单的测试工具,编辑测试网站</p>
-
+                        <a href="https://vivo.com.cn" target="_blank">vivo 官网</a>
+                        <p class="link-desc">网页办公、网盘、查找设备</p>
                     </div>
                     <div class="link-item">
-                        <a href="http://dashboard.cpolar.com/status" target="_blank">cpolar官网</a>
-                        <p class="link-desc">编辑测试网站</p>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                        <p class="link-desc">代码托管、网站部署</p>
                     </div>
                     <div class="link-item">
-                        <a href="https://gelingmeigewa.github.io/geling.github/03-资源下载站.html" target="_blank">个人专属下载网站</a>
-                        <p class="link-desc">个人专属下载网站</p>
+                        <a href="https://dash.cloudflare.com" target="_blank">Cloudflare 面板</a>
+                        <p class="link-desc">Pages、Workers 管理</p>
                     </div>
                     <div class="link-item">
-                        <a href="https://cloud.oppo.com/" target="_blank">OPPO云服务</a>
-                        <p class="link-desc">远程访问设备数据和文件,定位所在地</p>
+                        <a href="https://admin.localhost.run" target="_blank">localhost.run</a>
+                        <p class="link-desc">内网穿透、临时测试</p>
                     </div>
                     <div class="link-item">
-                        <a href="https://www.west.cn/manager/" target="_blank">西部数码官网</a>
-                        <p class="link-desc">有关域名的网址，可以购买域名,解析域名,配置域名等......</p>
+                        <a href="http://dashboard.cpolar.com/status" target="_blank">cpolar 控制台</a>
+                        <p class="link-desc">内网穿透、网站测试</p>
                     </div>
                     <div class="link-item">
-                        <a href="https://account.xiaomi.com/fe/service/login/password?_locale=zh_CN&_group=DEFAULT&_snsNone=false&sid=i.mi.com&qs=%253Fcallback%253Dhttps%25253A%25252F%25252Fi.mi.com%25252Fsts%25253Fsign%25253DRhIsSa7YnN5dy6deFMOVa7wQcRA%2525253D%252526followup%25253Dhttps%2525253A%2525252F%2525252Fcn.i.mi.com%2525252F%252526sid%25253Di.mi.com%2526sid%253Di.mi.com%2526_locale%253Dzh_CN%2526_group%253DDEFAULT%2526_snsNone%253Dfalse&callback=https%3A%2F%2Fi.mi.com%2Fsts%3Fsign%3DRhIsSa7YnN5dy6deFMOVa7wQcRA%253D%26followup%3Dhttps%253A%252F%252Fcn.i.mi.com%252F%26sid%3Di.mi.com&_sign=z2wE8h3YZTaPCGE6GaB2G6R4afM%3D&serviceParam=%7B%22checkSafePhone%22%3Afalse%2C%22checkSafeAddress%22%3Afalse%2C%22lsrp_score%22%3A0.0%7D&showActiveX=false&theme=&needTheme=false&bizDeviceType=" target="_blank">小米官网</a>
- <p class="link-desc">管理小米官网的任何和手机数据，也可以查找等</p>
-      </div>
-                    <div class="link-item">
-                        <a href="https://up.woozooo.com/account.php?action=login&ref=/mydisk.php" target="_blank">蓝奏云登录页面</a>
-                        <p class="link-desc">管理网盘数据</p>
+                        <a href="https://gelingmeigewa.github.io/geling.github/03-资源下载站.html" target="_blank">个人资源下载站</a>
+                        <p class="link-desc">个人专属资源下载</p>
                     </div>
-
-
-
-
-
-
-
-
-
-
+                    <div class="link-item">
+                        <a href="https://cloud.oppo.com" target="_blank">OPPO 云服务</a>
+                        <p class="link-desc">文件、定位、设备管理</p>
+                    </div>
+                    <div class="link-item">
+                        <a href="https://www.west.cn/manager" target="_blank">西部数码</a>
+                        <p class="link-desc">域名购买、解析、管理</p>
+                    </div>
+                    <div class="link-item">
+                        <a href="https://i.mi.com" target="_blank">小米云服务</a>
+                        <p class="link-desc">手机数据、查找设备</p>
+                    </div>
+                    <div class="link-item">
+                        <a href="https://up.woozooo.com" target="_blank">蓝奏云</a>
+                        <p class="link-desc">网盘文件管理</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 学校网址分类 -->
+        <!-- 学校 -->
         <div class="category">
-            <h2 class="category-title">🏫 学校专用网址（开启状态）</h2>
+            <h2 class="category-title">🏫 班级专用</h2>
             <div class="links-list">
                 <div class="link-card">
                     <div class="link-item">
-                        <a href="https://lenglingkali.github.io/lengling.github/01-index.html" target="_blank">班级专属照片墙网站</a>
-                        <p class="link-desc">班级同学照片展示、回忆收藏</p>
+                        <a href="https://lenglingkali.github.io/lengling.github/01-index.html" target="_blank">班级照片墙</a>
+                        <p class="link-desc">同学照片、回忆收藏</p>
                     </div>
                     <div class="link-item">
-                        <a href="https://lengling-github.pages.dev/01-index.html" target="_blank">班级照片墙网站(另一个服务器)[关闭状态］</a>
-                        <p class="link-desc">GitHub关联的班级照片墙网站</p>
+                        <a href="https://lengling-github.pages.dev/01-index.html" target="_blank">备用照片墙</a>
+                        <p class="link-desc">备用服务器（关闭状态）</p>
                     </div>
                     <div class="link-item">
-                        <a href="https://lenglingkali.github.io/lengling.github/03-更新日记.html" target="_blank">班级照片墙更新日记</a>
-                        <p class="link-desc">实时查看更新状态，获得最新内容</p>
+                        <a href="https://lenglingkali.github.io/lengling.github/03-更新日记.html" target="_blank">更新日记</a>
+                        <p class="link-desc">查看网站更新记录</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-<!-- 特殊网址分类 -->
+        <!-- 特殊 -->
         <div class="category">
-            <h2 class="category-title">特殊🤓🤓🤓</h2>
+            <h2 class="category-title">🤓 趣味工具</h2>
             <div class="links-list">
                 <div class="link-card">
                     <div class="link-item">
                         <a href="https://lengling.top/04-短信轰炸机.html" target="_blank">短信轰炸机</a>
-                        <p class="link-desc">骚扰朋友专用🤓😃</p>
-                    </div>
-       
+                        <p class="link-desc">朋友间娱乐使用</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 页脚 -->
     <footer>
-        <a href="https://lenglingkali.github.io/lengling.github/04-认证.html" target="_blank">
-            &copy; 2025 我的网站. 保留所有权利.
-        </a>
-        <a href="https://lenglingkali.github.io/lengling.github/04-认证.html" target="_blank">
-            赖** 已实名.归我所有!
-        </a>
+        <div>&copy; 2025 个人收藏夹 | 所有权利保留</div>
+        <div><a href="https://lenglingkali.github.io/lengling.github/04-认证.html" target="_blank">赖某某 已实名备案</a></div>
     </footer>
 
-    <!-- 搜索功能脚本 -->
     <script>
         const searchInput = document.getElementById('search-input');
-        const linkItems = document.querySelectorAll('.link-item'); // 精准搜索单个链接项
+        const linkItems = document.querySelectorAll('.link-item');
 
-        searchInput.addEventListener('input', function() {
-            const searchText = this.value.toLowerCase().trim();
+        searchInput.addEventListener('input', function () {
+            const keyword = this.value.toLowerCase().trim();
             linkItems.forEach(item => {
-                const itemText = item.textContent.toLowerCase();
-                // 控制单个链接项显示/隐藏，而非整个卡片
-                item.style.display = itemText.includes(searchText) ? 'block' : 'none';
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(keyword) ? 'block' : 'none';
             });
         });
     </script>
 </body>
-</html>
+                        </html>
