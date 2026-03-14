@@ -146,6 +146,11 @@
     <div class="container">
         <h1>常用网址收藏夹</h1>
 
+        <!-- 搜索框 -->
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="搜索链接名称或描述...">
+        </div>
+
         <div class="category">
             <h2 class="category-title">1</h2>
             <div class="links-list">
@@ -189,10 +194,10 @@
                     <div class="link-item">
                         <a href="https://up.woozooo.com" target="_blank">蓝奏云</a>
                         <p class="link-desc">网盘文件管理</p>
-                    </div>                    <div class="link-item">
+                    </div>
+                    <div class="link-item">
                         <a href="https://kitty.su/#/landing" target="_blank">代理服务商</a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -216,7 +221,6 @@
             </div>
         </div>
 
-
         <div class="category">
             <h2 class="category-title">3</h2>
             <div class="links-list">
@@ -234,31 +238,30 @@
                 <div class="link-card">
                     <div class="link-item">
                         <a href="http://192.168.1.173:19956/data/data/com.termux/files/home/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93" target="_blank">(终端-termux-x)局域网文件传输</a>
-                            </div>
+                    </div>
                     <div class="link-item">
                         <a href="https://iplark.com/" target="_blank">IP检测1</a>
                     </div>
                     <div class="link-item">
                         <a href="https://ping0.cc" target="_blank">IP检测2</a>
                     </div>
-
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <script>
+        // 搜索功能
+        const searchInput = document.getElementById('search-input');
+        const linkItems = document.querySelectorAll('.link-item');
 
-
-
-
-
-
-
-
-
-
-
+        searchInput.addEventListener('input', function () {
+            const key = this.value.trim().toLowerCase();
+            linkItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(key) ? 'block' : 'none';
+            });
+        });
     </script>
 </body>
 </html>
